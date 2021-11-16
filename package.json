@@ -1,10 +1,8 @@
 {
   "name": "myflix-client",
   "version": "1.0.0",
-  "description": "",
-  "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel src/index.html",
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,14 +18,10 @@
   "homepage": "https://github.com/Doris24/myFlix-client#readme",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "parcel": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/generator": "^7.16.0",
-    "@babel/parser": "^7.16.3",
-    "@babel/traverse": "^7.16.3",
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "parcel": "latest"
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
   }
 }
