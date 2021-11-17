@@ -22759,6 +22759,15 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: null //state value to identify if movie cards were clicked
         };
     }
+    componentDidMount() {
+        _axiosDefault.default.get('https://movyis.herokuapp.com/movies').then((response)=>{
+            this.setState({
+                movies: response.data
+            });
+        }).catch((error)=>{
+            console.log(error);
+        });
+    }
     setSelectedMovie(newSelectedMovie1) {
         this.setState({
             selectedMovie: newSelectedMovie1
@@ -22770,7 +22779,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 28,
+                lineNumber: 38,
                 columnNumber: 37
             },
             __self: this,
@@ -22780,18 +22789,18 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 31,
+                lineNumber: 41,
                 columnNumber: 7
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                movie: selectedMovie,
+                movieData: selectedMovie,
                 onBackClick: (newSelectedMovie)=>{
                     this.setSelectedMovie(newSelectedMovie);
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 33,
+                    lineNumber: 43,
                     columnNumber: 13
                 },
                 __self: this
@@ -22802,8 +22811,8 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 37,
-                        columnNumber: 36
+                        lineNumber: 48,
+                        columnNumber: 13
                     },
                     __self: this
                 }, movie._id)
