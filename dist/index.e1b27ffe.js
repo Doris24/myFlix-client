@@ -22925,7 +22925,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     render() {
-        const movies = this.state.movies;
+        const { movies  } = this.state;
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
@@ -22944,17 +22944,16 @@ class MainView extends _reactDefault.default.Component {
                 columnNumber: 7
             },
             __self: this,
-            children: movies.map((movie)=>{
-                return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                    movieData: movie,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 25,
-                        columnNumber: 18
+                        lineNumber: 24,
+                        columnNumber: 32
                     },
-                    __self: this,
-                    children: movie.Title
-                }));
-            })
+                    __self: this
+                }, movie._id)
+            )
         }));
     }
 }
@@ -22980,15 +22979,16 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
+        const { movieData  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "movie-card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 5,
+                lineNumber: 6,
                 columnNumber: 16
             },
             __self: this,
-            children: "some title"
+            children: movieData.Title
         }));
     }
 }
