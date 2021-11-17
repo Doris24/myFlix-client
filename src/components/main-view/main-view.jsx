@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'; // used to fetch moviedata
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -8,28 +9,21 @@ export class MainView extends React.Component {
   constructor() {
     super(); // initializes the component's state, calls constructor of the parent class (here: React.Component)
     this.state = {
-      movies: [
-        {
-          _id: 1,
-          Title: 'Inception',
-          Description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',
-          ImagePath: 'https://www.imdb.com/title/tt1375666/mediaviewer/rm459633664/?ref_=tt_ov_i'
-        },
-        {
-          _id: 2,
-          Title: 'The Shawshark Redemption',
-          Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
-          ImagePath: 'https://www.imdb.com/title/tt0111161/mediaviewer/rm3396001280/?ref_=tt_ov_i'
-        },
-        {
-          _id: 3,
-          Title: 'Gladiator',
-          Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
-          ImagePath: 'https://www.imdb.com/title/tt0172495/mediaviewer/rm3946017792/?ref_=tt_ov_i'
-        }
-      ],
+      movies: [],
       selectedMovie: null //state value to identify if movie cards were clicked
     };
+  }
+
+  componentDidMount() {
+    axios.get('https://movyes.herokuapp.com/movies')
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -47,13 +41,15 @@ export class MainView extends React.Component {
       <div className="main-view">
         {selectedMovie
           ? <MovieView
-            movie={selectedMovie}
+            movieData={selectedMovie}
             onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
 
-          : movies.map((movie) => (<MovieCard
-            key={movie._id}
-            movieData={movie}
-            onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />))}
+          : movies.map(movie => (
+            <MovieCard
+              key={movie._id}
+              movieData={movie}
+              onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />))
+        }
       </div>
     );
   }
