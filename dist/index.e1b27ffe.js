@@ -22907,20 +22907,20 @@ class MainView extends _reactDefault.default.Component {
                 {
                     _id: 1,
                     Title: 'Inception',
-                    Description: 'desc1...',
-                    ImagePath: '...'
+                    Description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.',
+                    ImagePath: 'https://www.imdb.com/title/tt1375666/mediaviewer/rm459633664/?ref_=tt_ov_i'
                 },
                 {
                     _id: 2,
                     Title: 'The Shawshark Redemption',
-                    Description: 'desc2...',
-                    ImagePath: '...'
+                    Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+                    ImagePath: 'https://www.imdb.com/title/tt0111161/mediaviewer/rm3396001280/?ref_=tt_ov_i'
                 },
                 {
                     _id: 3,
                     Title: 'Gladiator',
-                    Description: 'desc3...',
-                    ImagePath: '...'
+                    Description: 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
+                    ImagePath: 'https://www.imdb.com/title/tt0172495/mediaviewer/rm3946017792/?ref_=tt_ov_i'
                 }
             ],
             selectedMovie: null //state value to identify if movie cards were clicked
@@ -22937,7 +22937,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 29,
+                lineNumber: 44,
                 columnNumber: 37
             },
             __self: this,
@@ -22947,7 +22947,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 32,
+                lineNumber: 47,
                 columnNumber: 7
             },
             __self: this,
@@ -22958,7 +22958,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 34,
+                    lineNumber: 49,
                     columnNumber: 13
                 },
                 __self: this
@@ -22969,7 +22969,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 38,
+                        lineNumber: 53,
                         columnNumber: 36
                     },
                     __self: this
