@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import './movie-view.scss';
 
@@ -21,6 +22,14 @@ export class MovieView extends React.Component {
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
+        <div className="movie-genre-name">
+          <span className="label">Genre: </span>
+          <span className="value">{movie.Genre.Name}</span>
+        </div>
+        <div className="movie-director-name">
+          <span className="label">Director: </span>
+          <span className="value">{movie.Director.Name}</span>
+        </div>
         <button onClick={() => { onBackClick(null); }} >Back</button>
       </div>
     );
@@ -28,23 +37,18 @@ export class MovieView extends React.Component {
 }
 
 //specify how MovieView's props should look
-MovieView.PropTypes = {
+MovieView.propTypes = {
   movie: PropTypes.shape({ //must include a movie object
     Title: PropTypes.string.isRequired, //must contain a Title key(must be string)
     Description: PropTypes.string.isRequired,
-    ImapePath: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     }).isRequired,
     Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.string.isRequired,
-      Death: PropTypes.string
+      Name: PropTypes.string.isRequired
     }).isRequired,
     //Featured: PropTypes.bool.isRequired,
     //Actors: PropTypes.string
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired //must contain onMovieClick, must be a function
+  }).isRequired
 }
