@@ -16,7 +16,8 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null, //state value to identify if movie cards were clicked
-      user: null
+      user: null,
+      register: null
     }
   }
 
@@ -47,11 +48,20 @@ export class MainView extends React.Component {
     });
   }
 
+  onRegister(register) {
+    this.setState({
+      register
+    });
+  }
+
   render() { //what will be seen on screen
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, selectedMovie, user, register } = this.state;
+
+    if (!register) return <RegistrationView onRegister={register => this.onRegister(register)} />
 
     //if there is no user, the LoginView is rendered, if user is logged in, the user details are passed as a prop to the LoginView
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
 
     //Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;

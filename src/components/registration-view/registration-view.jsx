@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './registration-view.scss';
 
@@ -10,11 +10,11 @@ export function RegistrationView(props) {
   const [birthday, setBirthday] = useState('');
 
   const handleRegister = (e) => {
-    e.preventDefault(); //prevents the default refresh of the page after button (type="submit") click
-    console.log(username, password);
+    e.preventDefault();
+    console.log(username, password, email, birthday);
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username); //a user is automatically logged in regardless of the input, new login after refresh
+    /* then call props.onRegister(username) */
+    props.onRegister(username); //a user is automatically logged in regardless of the input, new login after refresh
   };
 
   return (
@@ -23,15 +23,15 @@ export function RegistrationView(props) {
       <form>
         <label>
           Username:
-          <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
+          <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
         </label>
         <label>
           Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
         </label>
         <label>
           Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
         </label>
         <label>
           Birthday:
