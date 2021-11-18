@@ -22800,8 +22800,8 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 60,
-                columnNumber: 27
+                lineNumber: 61,
+                columnNumber: 14
             },
             __self: this
         }));
@@ -22811,8 +22811,8 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 63,
-                columnNumber: 23
+                lineNumber: 65,
+                columnNumber: 14
             },
             __self: this
         }));
@@ -22821,7 +22821,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 67,
+                lineNumber: 69,
                 columnNumber: 37
             },
             __self: this
@@ -22830,7 +22830,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 70,
+                lineNumber: 72,
                 columnNumber: 7
             },
             __self: this,
@@ -22842,7 +22842,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 74,
+                        lineNumber: 76,
                         columnNumber: 13
                     },
                     __self: this
@@ -22853,7 +22853,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 79,
+                            lineNumber: 81,
                             columnNumber: 13
                         },
                         __self: this
@@ -22863,7 +22863,7 @@ class MainView extends _reactDefault.default.Component {
                     type: "button",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 85,
+                        lineNumber: 87,
                         columnNumber: 9
                     },
                     __self: this,
