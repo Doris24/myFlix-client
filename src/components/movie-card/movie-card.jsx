@@ -11,11 +11,11 @@ export class MovieCard extends React.Component {
 }
 
 //specify how MovieCard's props should look
-MovieCard.PropTypes = {
+MovieCard.propTypes = {
   movie: PropTypes.shape({ //must include a movie object
     Title: PropTypes.string.isRequired, //must contain a Title key(must be string)
     Description: PropTypes.string.isRequired,
-    ImapePath: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired
     }).isRequired,

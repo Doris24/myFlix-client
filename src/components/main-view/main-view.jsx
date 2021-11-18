@@ -50,7 +50,7 @@ export class MainView extends React.Component {
   render() { //what will be seen on screen
     const { movies, selectedMovie, user } = this.state;
 
-    //if there is no user the LoginView is rendered, if user is logged in, the user details are passed as a prop to the LoginView
+    //if there is no user, the LoginView is rendered, if user is logged in, the user details are passed as a prop to the LoginView
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     //Before the movies have been loaded
@@ -58,7 +58,8 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
-        {/* Ig the stat og the selectedMovie is not null, that selected movie will be returned otherwise, all movies will be returned */}
+
+        {/* If the state of selectedMovie is not null, that selected movie will be returned otherwise, all movies will be returned */}
         {selectedMovie
           ? <MovieView
             movie={selectedMovie}
