@@ -71,6 +71,8 @@ export class MainView extends React.Component {
               movie={movie}
               onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />))
         }
+
+        <button type="button">Unregister</button>
       </div>
     );
   }

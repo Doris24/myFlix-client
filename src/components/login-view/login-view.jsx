@@ -28,6 +28,7 @@ export function LoginView(props) {
         </label>
         <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
+      {/* <button type="button">Unregister</button> */}
     </div>
   );
 }
