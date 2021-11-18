@@ -17,17 +17,8 @@ MovieCard.PropTypes = {
     Description: PropTypes.string.isRequired,
     ImapePath: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     }).isRequired,
-    Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string,
-      Birth: PropTypes.string,
-      Death: PropTypes.string
-    }),
-    Featured: PropTypes.bool.isRequired,
-    Actors: PropTypes.string
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired //must contain onMovieClick, must be a function
 }
