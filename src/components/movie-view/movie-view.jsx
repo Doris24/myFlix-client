@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
 
   render() {

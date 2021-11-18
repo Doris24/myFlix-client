@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './login-view.scss';
+
 export function LoginView(props) {
   const [username, setUsername] = useState(''); //variable and a method that updates the variable
   const [password, setPassword] = useState('');

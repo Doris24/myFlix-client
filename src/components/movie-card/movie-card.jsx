@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'; //PropTypes validate data types based on the app's configuration
 
+import './movie-card.scss';
+
 export class MovieCard extends React.Component {
   render() {
     const { movie, onMovieClick } = this.props;
