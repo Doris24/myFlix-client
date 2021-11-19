@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
+
+// Bootstrap
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 import './registration-view.scss';
 
@@ -18,29 +27,54 @@ export function RegistrationView(props) {
   };
 
   return (
-    <div>
-      <h2>Registration</h2>
-      <form>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required />
-        </label>
-        <label>
-          Password:
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
-        </label>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
-        </label>
-        <label>
-          Birthday:
-          <input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="Birthday" />
-        </label>
-        <button type="submit" onClick={handleRegister}>
-          Register
-        </button>
-      </form>
-    </div>
+
+    <Container>
+      <Row>
+        <Col>
+          <Card>
+            <Card.Body>
+              <Card.Title>Registration</Card.Title>
+              <Form>
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
+                  placeholder="Username"
+                  required
+                />
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  placeholder="Password"
+                  required
+                />
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="Email"
+                  required
+                />
+                <Form.Label>Birthday</Form.Label>
+                <Form.Control
+                  type="date"
+                  value={birthday}
+                  onChange={e => setBirthday(e.target.value)}
+                  placeholder="Birthday"
+                />
+                <Button className="register-button" type="submit" onClick={handleRegister}>
+                  Register
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
+

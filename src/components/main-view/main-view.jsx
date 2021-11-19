@@ -62,6 +62,7 @@ export class MainView extends React.Component {
   render() { //what will be seen on screen
     const { movies, selectedMovie, user, register } = this.state;
 
+
     if (!register)
       return <RegistrationView onRegister={register => this.onRegister(register)} />
 
@@ -72,6 +73,7 @@ export class MainView extends React.Component {
 
     //Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;
+
 
     return (
       <Row className="main-view justify-content-md-center">
@@ -91,6 +93,7 @@ export class MainView extends React.Component {
                 movie={movie}
                 onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}
               />
+
             </Col>
           ))
         }

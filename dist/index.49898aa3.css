@@ -7,7 +7,13 @@ body {
 .login-button, .form-label {
   margin-top: 12px;
 }
+Card {
+  background-color: #2fc799;
+}
 
+.register-button {
+  margin-top: 15px;
+}
 
 .my-flix {
   color: #46b470;
