@@ -25651,10 +25651,10 @@ function LoginView(props) {
 _s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;
 LoginView.propTypes = {
-    movie: _propTypesDefault.default.shape({
+    user: _propTypesDefault.default.shape({
         Username: _propTypesDefault.default.string.isRequired,
         Password: _propTypesDefault.default.string.isRequired
-    }).isRequired,
+    }),
     onLoggedIn: _propTypesDefault.default.func.isRequired //must contain onMovieClick, must be a function
 } // import React from 'react';
  // export class LoginView extends React.Component {
@@ -25883,13 +25883,13 @@ function RegistrationView(props) {
 }
 _s(RegistrationView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
 _c = RegistrationView;
-LoginView.propTypes = {
-    movie: _propTypesDefault.default.shape({
+RegistrationView.propTypes = {
+    register: _propTypesDefault.default.shape({
         Username: _propTypesDefault.default.string.isRequired,
         Password: _propTypesDefault.default.string.isRequired,
         Email: _propTypesDefault.default.string.isRequired,
         Birthday: _propTypesDefault.default.string.isRequired
-    }).isRequired,
+    }),
     onRegister: _propTypesDefault.default.func.isRequired //must contain onMovieClick, must be a function
 };
 var _c;
