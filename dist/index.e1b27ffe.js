@@ -25521,7 +25521,8 @@ MovieView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired
         }).isRequired
-    }).isRequired
+    }).isRequired,
+    onBackClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$4e70.postlude(module);
@@ -25539,54 +25540,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LoginView", ()=>LoginView
-) // import React from 'react';
- // export class LoginView extends React.Component {
- //   constructor(props) {
- //     super(props);
- //     //component stores username and passwort in its local state
- //     this.state = {
- //       username: '',
- //       passwort: ''
- //     };
- //     this.onUsernameChange = this.onUsernameChange.bind(this);
- //     this.onPasswordChange = this.onPasswordChange.bind(this);
- //     this.handleSubmit = this.handleSubmit.bind(this);
- //   }
- //   //
- //   onUsernameChange(event) {
- //     this.setState({
- //       username: event.target.value
- //     });
- //   }
- //   onPasswordChange(event) {
- //     this.setState({
- //       passwort: event.target.value
- //     });
- //   }
- //   handleSubmit() {
- //     const { username, passwort } = this.state;
- //     console.log(username, password);
- //     /* Send a request to the server for authentication */
- //     /* then call this.props.onLoggedIn(username) */
- //     this.props / onLoggedIn(username);
- //   }
- //   render() {
- //     return (
- //       <form>
- //         <label>
- //           Username:
- //           <input type="text" value={this.state.username} onChange={this.onUsernameChange} />
- //         </label>
- //         <label>
- //           Password:
- //           <input type="password" value={this.state.passwort} onChange={this.onPasswordChange} />
- //         </label>
- //         <button type="button" onClick={this.handleSubmit}>Submit</button>
- //       </form>
- //     );
- //   }
- // }
-;
+);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -25696,6 +25650,60 @@ function LoginView(props) {
 }
 _s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
 _c = LoginView;
+LoginView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onLoggedIn: _propTypesDefault.default.func.isRequired //must contain onMovieClick, must be a function
+} // import React from 'react';
+ // export class LoginView extends React.Component {
+ //   constructor(props) {
+ //     super(props);
+ //     //component stores username and passwort in its local state
+ //     this.state = {
+ //       username: '',
+ //       passwort: ''
+ //     };
+ //     this.onUsernameChange = this.onUsernameChange.bind(this);
+ //     this.onPasswordChange = this.onPasswordChange.bind(this);
+ //     this.handleSubmit = this.handleSubmit.bind(this);
+ //   }
+ //   //
+ //   onUsernameChange(event) {
+ //     this.setState({
+ //       username: event.target.value
+ //     });
+ //   }
+ //   onPasswordChange(event) {
+ //     this.setState({
+ //       passwort: event.target.value
+ //     });
+ //   }
+ //   handleSubmit() {
+ //     const { username, passwort } = this.state;
+ //     console.log(username, password);
+ //     /* Send a request to the server for authentication */
+ //     /* then call this.props.onLoggedIn(username) */
+ //     this.props / onLoggedIn(username);
+ //   }
+ //   render() {
+ //     return (
+ //       <form>
+ //         <label>
+ //           Username:
+ //           <input type="text" value={this.state.username} onChange={this.onUsernameChange} />
+ //         </label>
+ //         <label>
+ //           Password:
+ //           <input type="password" value={this.state.passwort} onChange={this.onPasswordChange} />
+ //         </label>
+ //         <button type="button" onClick={this.handleSubmit}>Submit</button>
+ //       </form>
+ //     );
+ //   }
+ // }
+;
 var _c;
 $RefreshReg$(_c, "LoginView");
 
@@ -25875,6 +25883,15 @@ function RegistrationView(props) {
 }
 _s(RegistrationView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
 _c = RegistrationView;
+LoginView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    onRegister: _propTypesDefault.default.func.isRequired //must contain onMovieClick, must be a function
+};
 var _c;
 $RefreshReg$(_c, "RegistrationView");
 

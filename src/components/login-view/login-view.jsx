@@ -34,6 +34,15 @@ export function LoginView(props) {
   );
 }
 
+LoginView.propTypes = {
+  movie: PropTypes.shape({ //must include a movie object
+    Username: PropTypes.string.isRequired, //must contain a Title key(must be string)
+    Password: PropTypes.string.isRequired
+  }).isRequired,
+  onLoggedIn: PropTypes.func.isRequired //must contain onMovieClick, must be a function
+}
+
+
 // import React from 'react';
 
 // export class LoginView extends React.Component {

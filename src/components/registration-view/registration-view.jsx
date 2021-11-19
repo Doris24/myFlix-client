@@ -44,3 +44,13 @@ export function RegistrationView(props) {
     </div>
   );
 }
+
+LoginView.propTypes = {
+  movie: PropTypes.shape({ //must include a movie object
+    Username: PropTypes.string.isRequired, //must contain a Title key(must be string)
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired
+  }).isRequired,
+  onRegister: PropTypes.func.isRequired //must contain onMovieClick, must be a function
+}
