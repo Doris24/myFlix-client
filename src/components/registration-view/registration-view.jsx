@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 
 // Bootstrap
@@ -78,3 +79,6 @@ export function RegistrationView(props) {
   );
 }
 
+RegistrationView.propTypes = {
+  onRegister: PropTypes.func.isRequired
+}

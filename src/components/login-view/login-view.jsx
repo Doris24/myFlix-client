@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import PropTypes from 'prop-types';
 
 import './login-view.scss';
 
@@ -63,7 +63,9 @@ export function LoginView(props) {
   );
 }
 
-
+LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired
+}
 
 // import React from 'react';
 
