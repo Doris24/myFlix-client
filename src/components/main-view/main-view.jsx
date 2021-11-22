@@ -11,7 +11,8 @@ import './main-view.scss';
 // Bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 
 export class MainView extends React.Component {
 
@@ -76,29 +77,35 @@ export class MainView extends React.Component {
 
 
     return (
-      <Row className="main-view justify-content-md-center">
-        {selectedMovie
-          ? (
-            <Col md={8}>
-              <MovieView
-                movie={selectedMovie}
-                onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}
-              />
-            </Col>
-          )
-          : movies.map(movie => (
-            <Col md={3}>
-              <MovieCard
-                key={movie._id}
-                movie={movie}
-                onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}
-              />
+      <div>
+        {/* <Navbar>
 
-            </Col>
-          ))
-        }
-        <Button type="button">Unregister</Button>
-      </Row>
+        </Navbar> */}
+
+        <Row className="main-view justify-content-md-center">
+          {selectedMovie
+            ? (
+              <Col>
+                <MovieView
+                  movie={selectedMovie}
+                  onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}
+                />
+              </Col>
+            )
+            : movies.map(movie => (
+              <Col lg={3} md={4} sm={6}>
+                <MovieCard
+                  key={movie._id}
+                  movie={movie}
+                  onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}
+                />
+
+              </Col>
+            ))
+          }
+          <Button type="button">Unregister</Button>
+        </Row>
+      </div>
     );
   }
 }

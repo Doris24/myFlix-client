@@ -1,6 +1,11 @@
-Card {
-    background-color: rgb(47, 199, 153);
-}
+$color-primary: #79B4B7; //Navbar
+$color-second: #9D9D9D; //Button
+$color-light: #FEFBF3;
+$color-extra: #F8F0DF;
+
+
 .register-button {
-    margin-top: 15px;
+    margin-top: 20px;
+    color: #000;
+    background-color: #9D9D9D;
 }
