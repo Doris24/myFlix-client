@@ -1,0 +1,33 @@
+$color-primary: #79B4B7; //Navbar
+$color-second: #9D9D9D; //Button
+$color-light: #F8F0DF;
+$color-extra: #FEFBF3;
+$color-text: #000; //text
+
+.movie-card {
+    margin: 5px 5px;
+    
+}
+
+.movie-card-text {
+    font-size: 14px;
+}
+
+.movie-card .movie-card-button {
+    color: $color-text;
+    background-color: $color-second;
+    border: $color-second;
+    font-weight: bold;
+}
+
+.movie-card-body .movie-card-button:hover {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
+}
+
+.movie-card-body .movie-card-button:active {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
+}

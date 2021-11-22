@@ -29,8 +29,8 @@ export function LoginView(props) {
         <Col>
           <Card>
             <Card.Body>
-              <Card.Title>Login</Card.Title>
-              <Form>
+              <Card.Title className="login-title" >Login</Card.Title>
+              <Form className="login-form" >
                 <Form.Group controlId="formUsername">
                   <Form.Label className="form-label">Username</Form.Label>
                   <Form.Control
@@ -41,6 +41,7 @@ export function LoginView(props) {
                     required
                   />
                 </Form.Group>
+
                 <Form.Group controlId="formPassword">
                   <Form.Label className="form-label">Password</Form.Label>
                   <Form.Control

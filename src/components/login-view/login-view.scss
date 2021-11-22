@@ -1,8 +1,29 @@
 $color-primary: #79B4B7; //Navbar
 $color-second: #9D9D9D; //Button
-$color-light: #FEFBF3;
-$color-extra: #F8F0DF;
+$color-light: #F8F0DF;
+$color-extra: #FEFBF3;
+$color-text: #000; //text
 
-.login-button, .form-label {
-    margin-top: 12px;
+.form-label {
+    margin-top: 15px;
+}
+
+.login-form .login-button {
+    margin-top: 20px;
+    color: $color-text;
+    background-color: $color-second;
+    border: $color-second;
+    font-weight: bold;
+}
+
+.login-form .login-button:hover {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
+}
+
+.login-form .register-button:active {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
 }

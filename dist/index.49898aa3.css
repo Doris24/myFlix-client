@@ -1,25 +1,101 @@
+.movie-card {
+  margin: 5px 5px;
+}
 
+.movie-card-text {
+  font-size: 14px;
+}
+
+.movie-card .movie-card-button {
+  color: #000;
+  background-color: #9D9D9D;
+  border: #9D9D9D;
+  font-weight: bold;
+}
+
+.movie-card-body .movie-card-button:hover {
+  background-color: #F8F0DF;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.movie-card-body .movie-card-button:active {
+  background-color: #F8F0DF;
+  color: #000;
+  border: #9D9D9D;
+}
 .label {
   font-weight: bold;
 }
 
 .value {
-  margin: 0px 20px 5px 20px;
+  margin: 0px 25px 10px 25px;
 }
 
-div .movie-button {
+.movie-button-div .movie-button {
+  margin-top: 10px;
+  color: #000;
   background-color: #9D9D9D;
   border: #9D9D9D;
-  color: #000;
   font-weight: bold;
 }
-.login-button, .form-label {
-  margin-top: 12px;
+
+.movie-button-div .movie-button:hover {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
 }
-.register-button {
+
+.movie-button-div .movie-button:active {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
+.form-label {
+  margin-top: 15px;
+}
+
+.login-form .login-button {
   margin-top: 20px;
   color: #000;
   background-color: #9D9D9D;
+  border: #9D9D9D;
+  font-weight: bold;
+}
+
+.login-form .login-button:hover {
+  background-color: #F8F0DF;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.login-form .register-button:active {
+  background-color: #F8F0DF;
+  color: #000;
+  border: #9D9D9D;
+}
+.register-label {
+  margin-top: 15px;
+}
+
+.register-form .register-button {
+  margin-top: 20px;
+  color: #000;
+  background-color: #9D9D9D;
+  border: #9D9D9D;
+  font-weight: bold;
+}
+
+.register-form .register-button:hover {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.register-form .register-button:active {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
 }
 
 .my-flix {

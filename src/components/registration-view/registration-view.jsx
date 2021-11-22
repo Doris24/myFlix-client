@@ -34,10 +34,10 @@ export function RegistrationView(props) {
         <Col>
           <Card>
             <Card.Body>
-              <Card.Title>Registration</Card.Title>
-              <Form>
+              <Card.Title className="register-title" >Registration</Card.Title>
+              <Form className="register-form" >
                 <Form.Group className="register-username" >
-                  <Form.Label>Username</Form.Label>
+                  <Form.Label className="register-label" >Username</Form.Label>
                   <Form.Control
                     type="text"
                     value={username}
@@ -48,7 +48,7 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Form.Group className="register-password" >
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label className="register-label" >Password</Form.Label>
                   <Form.Control
                     type="password"
                     value={password}
@@ -59,7 +59,7 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Form.Group className="register-email" >
-                  <Form.Label>Email</Form.Label>
+                  <Form.Label className="register-label" >Email</Form.Label>
                   <Form.Control
                     type="email"
                     value={email}
@@ -70,7 +70,7 @@ export function RegistrationView(props) {
                 </Form.Group>
 
                 <Form.Group className="register-birthday" >
-                  <Form.Label>Birthday</Form.Label>
+                  <Form.Label className="register-label" >Birthday</Form.Label>
                   <Form.Control
                     type="date"
                     value={birthday}
