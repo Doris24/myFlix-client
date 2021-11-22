@@ -13,6 +13,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 
 export class MainView extends React.Component {
 
@@ -78,9 +80,19 @@ export class MainView extends React.Component {
 
     return (
       <div>
-        {/* <Navbar>
-
-        </Navbar> */}
+        <Navbar className="navbar-container" fixed="top" expand="md">
+          <Container>
+            <Navbar.Brand>movyis</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse>
+              <Nav className="navbar-nav">
+                <Nav.Link className="navbar-link navbar-link-active">Movies</Nav.Link>
+                <Nav.Link>Profile</Nav.Link>
+                <Nav.Link>Logout</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
 
         <Row className="main-view justify-content-md-center">
           {selectedMovie
@@ -103,7 +115,7 @@ export class MainView extends React.Component {
               </Col>
             ))
           }
-          <Button type="button">Unregister</Button>
+          <Button className="unregister-button" type="submit">Unregister</Button>
         </Row>
       </div>
     );

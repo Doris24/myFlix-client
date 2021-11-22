@@ -4,6 +4,18 @@ $color-light: #FEFBF3;
 $color-extra: #F8F0DF;
 $color-text: #000; //text
 
+div .register-navbar {
+    background-color: $color-primary;
+}
+
+div .navbar-link-active {
+    font-weight: bold;
+}
+
+.register-card {
+    margin-top: 60px;
+}
+
 .register-label {
     margin-top: 15px;
 }

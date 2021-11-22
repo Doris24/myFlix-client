@@ -1,0 +1,36 @@
+$color-primary: #79B4B7; //Navbar
+$color-second: #9D9D9D; //Button
+$color-light: #F8F0DF;
+$color-extra: #FEFBF3;
+$color-text: #000; //text
+
+div .navbar-container {
+    background-color: $color-primary;
+}
+
+div .navbar-link-active {
+    font-weight: bold;
+}
+
+div .main-view {
+    margin-top: 60px;
+}
+
+div .unregister-button {
+    color: $color-text;
+    background-color: $color-second;
+    border: $color-second;
+    font-weight: bold;
+}
+
+div .unregister-button:hover {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
+}
+
+div .unregister-button:active {
+    background-color: $color-light;
+    color: $color-text;
+    border: $color-second;
+}

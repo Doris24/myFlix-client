@@ -10,6 +10,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 export function LoginView(props) {
   const [username, setUsername] = useState(''); //variable and a method that updates the variable
@@ -24,43 +26,60 @@ export function LoginView(props) {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Card>
-            <Card.Body>
-              <Card.Title className="login-title" >Login</Card.Title>
-              <Form className="login-form" >
-                <Form.Group controlId="formUsername">
-                  <Form.Label className="form-label">Username</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={e => setUsername(e.target.value)}
-                    placeholder="Username"
-                    required
-                  />
-                </Form.Group>
 
-                <Form.Group controlId="formPassword">
-                  <Form.Label className="form-label">Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                    placeholder="Password"
-                    required
-                  />
-                </Form.Group>
-                <Button className="login-button" variant="primary" type="submit" onClick={handleSubmit}>
-                  Submit
-                </Button>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <Navbar className="login-navbar" fixed="top" expand="md">
+        <Container>
+          <Navbar.Brand>movyis</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse>
+            <Nav className="navbar-nav">
+              <Nav.Link>Movies</Nav.Link>
+              <Nav.Link>Profile</Nav.Link>
+              <Nav.Link className="navbar-link navbar-link-active">Login</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+      <Container>
+        <Row>
+          <Col>
+            <Card className="login-card">
+              <Card.Body>
+                <Card.Title className="login-title" >Login</Card.Title>
+                <Form className="login-form" >
+                  <Form.Group controlId="formUsername">
+                    <Form.Label className="form-label">Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={e => setUsername(e.target.value)}
+                      placeholder="Username"
+                      required
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="formPassword">
+                    <Form.Label className="form-label">Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
+                      placeholder="Password"
+                      required
+                    />
+                  </Form.Group>
+                  <Button className="login-button" variant="primary" type="submit" onClick={handleSubmit}>
+                    Submit
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
