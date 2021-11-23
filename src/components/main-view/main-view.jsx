@@ -32,16 +32,15 @@ export class MainView extends React.Component {
   //mounted: fully renderd and added to DOM -> visible in browser
   //execute code right after the component is mounted
   componentDidMount() {
-    axios.get('https://movyis.herokuapp.com/movies')
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
       });
+      this.getMovies(accessToken);
+    }
   }
+
   //function that updates the state of the selectedMovie Property when movie is clicked
   setSelectedMovie(newSelectedMovie) {
     this.setState({
@@ -49,16 +48,48 @@ export class MainView extends React.Component {
     });
   }
 
+  //triggered by handlehandleSubmit in loginView
   //updates user state, when successfully logged in
-  onLoggedIn(user) {
+  //authData logs the state
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Username //user's username is saved in the user state
     });
+
+    //auth information (user and token) is saved in local storage
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token); //get Movies when user is logged in, this is the object itself (here: MainView class)
+  }
+
+  //GET request to get movies endpoint of the Node.js API
+  getMovies(token) {
+    axios.get('https://movyis.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
+    })
+      .then(response => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   onRegister(register) {
     this.setState({
       register
+    });
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
     });
   }
 
@@ -88,7 +119,7 @@ export class MainView extends React.Component {
               <Nav className="navbar-nav">
                 <Nav.Link className="navbar-link navbar-link-active">Movies</Nav.Link>
                 <Nav.Link>Profile</Nav.Link>
-                <Nav.Link>Logout</Nav.Link>
+                <Nav.Link onClick={() => { this.onLoggedOut() }}>Logout</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -105,9 +136,8 @@ export class MainView extends React.Component {
               </Col>
             )
             : movies.map(movie => (
-              <Col lg={3} md={4} sm={6}>
+              <Col lg={3} md={4} sm={6} key={movie._id}>
                 <MovieCard
-                  key={movie._id}
                   movie={movie}
                   onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}
                 />

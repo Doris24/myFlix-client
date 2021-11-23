@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
 
 import './login-view.scss';
 
@@ -20,9 +22,18 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault(); //prevents the default refresh of the page after button (type="submit") click
     console.log(username, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username); //a user is automatically logged in regardless of the input, new login after refresh
+    /* Send a POST request to the server for authentication */
+    axios.post('https://movyis.herokuapp.com/login', {
+      Username: username,
+      Password: password
+    })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch(e => {
+        console.log('no such user')
+      });
   };
 
   return (
