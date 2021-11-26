@@ -14,6 +14,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
   const [username, setUsername] = useState(''); //variable and a method that updates the variable
@@ -84,6 +85,10 @@ export function LoginView(props) {
                   <Button className="login-button" variant="primary" type="submit" onClick={handleSubmit}>
                     Submit
                   </Button>
+                  <Link to={`/register`}>
+                    <Button className="login-button register-button" variant="link">Register</Button>
+                  </Link>
+
                 </Form>
               </Card.Body>
             </Card>

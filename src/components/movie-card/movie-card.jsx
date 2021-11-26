@@ -4,25 +4,27 @@ import PropTypes from 'prop-types'; //PropTypes validate data types based on the
 //Bootstrap
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+
+import { Link } from 'react-router-dom';
 
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {
 
   render() {
-    const { movie, onMovieClick } = this.props;
-
+    const { movie } = this.props;
+    console.log("movie-card");
     return (
-      < Card className="movie-card" >
+      <Card className="movie-card" >
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body className="movie-card-body" >
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text className="movie-card-text" >{movie.Description}</Card.Text>
-          <Button className="movie-card-button" onClick={() => onMovieClick(movie)} cariant="link">Open</Button>
+          <Link to={`/movies/${movie._id}`}>
+            <Button className="movie-card-button" variant="link">Open</Button>
+          </Link>
         </Card.Body>
       </Card >
-
     );
   }
 }

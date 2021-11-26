@@ -10,13 +10,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './movie-view.scss';
+import { Link } from 'react-router-dom';
 
 
 export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-
+    console.log("MovieviewRender");
     return (
       <Container className='Movie-Container'>
         <Row>
@@ -26,10 +27,7 @@ export class MovieView extends React.Component {
                 <div className="movie-poster">
                   <img src={movie.ImagePath} alt="Movie-Poster" />
                 </div>
-                <div className="movie-title">
-                  <span className="label">Title: </span>
-                  <div className="value">{movie.Title}</div>
-                </div>
+                <h1 className="movie-title">{movie.Title}</h1>
                 <div className="movie-description">
                   <span className="label">Description: </span>
                   <div className="value">{movie.Description}</div>
@@ -37,22 +35,26 @@ export class MovieView extends React.Component {
                 <div className="movie-genre-name">
                   <span className="label">Genre: </span>
                   <div className="value">{movie.Genre.Name}</div>
+                  <Link to={`/genres/${movie.Genre.Name}`}>
+                    <Button className="movie-button" variant="link">Genre</Button>
+                  </Link>
                 </div>
                 <div className="movie-director-name">
                   <span className="label">Director: </span>
                   <div className="value">{movie.Director.Name}</div>
+                  <Link to={`/directors/${movie.Director.Name}`}>
+                    <Button className="movie-button" variant="link">Director</Button>
+                  </Link>
                 </div>
                 <div className="movie-button-div">
-                  <Button className="movie-button" onClick={() => { onBackClick(null); }} >Back</Button>
+                  <Button className="movie-button"
+                    onClick={() => { onBackClick(); }}>Back</Button>
                 </div>
-
               </Card.Body>
             </Card>
           </Col>
         </Row>
-
       </Container >
-
     );
   }
 }

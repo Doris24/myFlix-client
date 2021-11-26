@@ -8,9 +8,19 @@ div .navbar-container {
     background-color: $color-primary;
 }
 
-div .navbar-link-active {
-    font-weight: bold;
+div .navbar-link {
+    color: $color-text;
+    padding: 0px 10px;
+    text-decoration: none;
 }
+
+div .navbar-link:hover {
+    color: $color-text;
+    font-weight: bold;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
 
 div .main-view {
     margin-top: 60px;

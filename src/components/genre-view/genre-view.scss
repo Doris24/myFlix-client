@@ -12,22 +12,21 @@ $color-text: #000; //text
    margin: 0px 25px 10px 25px;
 }
 
-.movie-button-div .movie-button {
+.genre-button-div .genre-button {
     margin-top: 10px;
     color: $color-text;
     background-color: $color-second;
     border: $color-second;
     font-weight: bold;
-    text-decoration: none;
 }
 
-.movie-button-div .movie-button:hover {
+.genre-button-div .genre-button:hover {
     background-color: $color-light;
     color: $color-text;
     border: $color-second;
 }
 
-.movie-button-div .movie-button:active {
+.genre-button-div .genre-button:active {
     background-color: $color-light;
     color: $color-text;
     border: $color-second;

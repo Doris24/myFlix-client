@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 
 // Bootstrap
@@ -12,8 +13,6 @@ import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-
-
 import './registration-view.scss';
 
 export function RegistrationView(props) {
@@ -25,10 +24,23 @@ export function RegistrationView(props) {
   const handleRegister = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
-    /* Send a request to the server for authentication */
-    /* then call props.onRegister(username) */
-    props.onRegister(username); //a user is automatically logged in regardless of the input, new login after refresh
+
+    axios.post('https://movyis.herokuapp.com/users', {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday
+    })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        windows.open('/', '_self'); //_self: open the page in the current tab
+      })
+      .catch(e => {
+        console.log('error registering the user')
+      });
   };
+
 
   return (
 
@@ -113,5 +125,5 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-  onRegister: PropTypes.func.isRequired
+  //handleRegister: PropTypes.func.isRequired
 }
