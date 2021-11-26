@@ -16,8 +16,11 @@ import { Link } from 'react-router-dom';
 export class ProfileView extends React.Component {
 
   render() {
-    return
-    <h1>Profile</h1>;
+    console.log('ProfileView');
+    return (
+      <h1>Profile</h1>
+    );
+
 
   }
 }

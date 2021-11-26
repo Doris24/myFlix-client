@@ -34029,7 +34029,16 @@ var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactRouterDom = require("react-router-dom");
 class ProfileView extends _reactDefault.default.Component {
     render() {
-        return;
+        console.log('ProfileView');
+        return(/*#__PURE__*/ _jsxRuntime.jsx("h1", {
+            __source: {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 21,
+                columnNumber: 7
+            },
+            __self: this,
+            children: "Profile"
+        }));
     }
 }
 //specify how MovieView's props should look
