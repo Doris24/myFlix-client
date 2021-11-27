@@ -47,7 +47,7 @@ export class ProfileView extends React.Component {
 
   getUser(token) {
     const Username = localStorage.getItem('user')
-
+    console.log(Username);
     axios.get('https://movyis.herokuapp.com/users/${Username}', {
       headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
     })
@@ -58,7 +58,7 @@ export class ProfileView extends React.Component {
           Password: response.data.Password,
           Email: response.data.Email,
           Birthday: response.data.Birthday,
-          FavMovies: response.data.FavoritMovies
+          FavMovies: response.data.FavoriteMovies
         });
 
       })
@@ -76,7 +76,7 @@ export class ProfileView extends React.Component {
     const { Username, Password, Email, Birthday } = this.state;
 
     console.log('profile-view');
-    //console.log(Username);
+    // console.log(Username);
     return (
       <Container>
         <Row>
@@ -91,11 +91,11 @@ export class ProfileView extends React.Component {
                 </div>
                 <div className="user-info">
                   <span className="label">E-Mail: </span>
-                  <div className="value">{user.Email}</div>
+                  <div className="value">{Email}</div>
                 </div>
                 <div className="user-info">
                   <span className="label">Birthday: </span>
-                  <div className="value">{user.Birthday}</div>
+                  <div className="value">{Birthday}</div>
                 </div>
                 {/* Deregister */}
                 {/* <Link to={} >

@@ -33870,6 +33870,7 @@ class ProfileView extends _reactDefault.default.Component {
     }
     getUser(token) {
         const Username = localStorage.getItem('user');
+        console.log(Username);
         _axiosDefault.default.get('https://movyis.herokuapp.com/users/${Username}', {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -33881,7 +33882,7 @@ class ProfileView extends _reactDefault.default.Component {
                 Password: response.data.Password,
                 Email: response.data.Email,
                 Birthday: response.data.Birthday,
-                FavMovies: response.data.FavoritMovies
+                FavMovies: response.data.FavoriteMovies
             });
         }).catch(function(error) {
             console.log(error);
@@ -33894,7 +33895,7 @@ class ProfileView extends _reactDefault.default.Component {
         const { movies , user  } = this.props;
         const { Username , Password , Email , Birthday  } = this.state;
         console.log('profile-view');
-        //console.log(Username);
+        // console.log(Username);
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
@@ -34011,7 +34012,7 @@ class ProfileView extends _reactDefault.default.Component {
                                                             columnNumber: 19
                                                         },
                                                         __self: this,
-                                                        children: user.Email
+                                                        children: Email
                                                     })
                                                 ]
                                             }),
@@ -34042,7 +34043,7 @@ class ProfileView extends _reactDefault.default.Component {
                                                             columnNumber: 19
                                                         },
                                                         __self: this,
-                                                        children: user.Birthday
+                                                        children: Birthday
                                                     })
                                                 ]
                                             })
