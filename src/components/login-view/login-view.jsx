@@ -40,7 +40,7 @@ export function LoginView(props) {
   return (
 
     <div>
-      <Navbar className="login-navbar" fixed="top" expand="md">
+      {/* <Navbar className="login-navbar" fixed="top" expand="md">
         <Container>
           <Navbar.Brand>movyis</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -52,7 +52,7 @@ export function LoginView(props) {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
 
       <Container>
         <Row>

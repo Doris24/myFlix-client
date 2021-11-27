@@ -40,13 +40,11 @@ export function RegistrationView(props) {
         console.log('error registering the user')
       });
   };
-
-
   return (
 
     <div>
 
-      <Navbar className="register-navbar" fixed="top" expand="md">
+      {/* <Navbar className="register-navbar" fixed="top" expand="md">
         <Container>
           <Navbar.Brand>movyis</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,7 +57,7 @@ export function RegistrationView(props) {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
 
       <Container>
         <Row>
