@@ -34,30 +34,17 @@ export function RegistrationView(props) {
       .then(response => {
         const data = response.data;
         console.log(data);
-        windows.open('/', '_self'); //_self: open the page in the current tab
+
+      }).then(() => {
+        window.open('/', '_self'); //_self: open the page in the current tab
       })
       .catch(e => {
-        console.log('error registering the user')
+        console.log('error registering the user');
       });
   };
   return (
 
     <div>
-
-      {/* <Navbar className="register-navbar" fixed="top" expand="md">
-        <Container>
-          <Navbar.Brand>movyis</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>
-            <Nav className="navbar-nav">
-              <Nav.Link>Movies</Nav.Link>
-              <Nav.Link>Profile</Nav.Link>
-              <Nav.Link>Login</Nav.Link>
-              <Nav.Link className="navbar-link navbar-link-active">Registration</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
 
       <Container>
         <Row>
@@ -72,7 +59,8 @@ export function RegistrationView(props) {
                       type="text"
                       value={username}
                       onChange={e => setUsername(e.target.value)}
-                      placeholder="Username"
+                      placeholder="Username - min. 5 characters"
+                      minLength={5}
                       required
                     />
                   </Form.Group>
@@ -94,7 +82,7 @@ export function RegistrationView(props) {
                       type="email"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
-                      placeholder="Email"
+                      placeholder="e.g. johndoe@example.com"
                       required
                     />
                   </Form.Group>

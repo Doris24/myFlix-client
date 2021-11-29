@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-// import './profile-view.scss';
+import './profile-view.scss';
 
 // Bootstrap
 import Card from 'react-bootstrap/Card';
@@ -13,6 +13,7 @@ import Col from 'react-bootstrap/Col';
 import { CardGroup, Form } from 'react-bootstrap';
 import CardHeader from 'react-bootstrap/CardHeader';
 
+//import { FavMoviesView } from './fav-movies';
 
 
 import { Link } from 'react-router-dom';
@@ -32,8 +33,13 @@ export class ProfileView extends React.Component {
   }
 
   componentDidMount() {
-    const accessToken = localStorage.getItem('token');
-    this.getUser(accessToken);
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getUser(accessToken);
+    }
   }
 
   onLoggedOut() {
@@ -46,9 +52,9 @@ export class ProfileView extends React.Component {
   }
 
   getUser(token) {
-    const Username = localStorage.getItem('user')
+    const Username = localStorage.getItem('user');
     console.log(Username);
-    axios.get('https://movyis.herokuapp.com/users/${Username}', {
+    axios.get(`https://movyis.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
     })
       .then(response => {
@@ -60,63 +66,218 @@ export class ProfileView extends React.Component {
           Birthday: response.data.Birthday,
           FavMovies: response.data.FavoriteMovies
         });
-
       })
       .catch(function (error) {
         console.log(error);
       });
   }
 
-  onDeregistration(user) {
+  editUser(e) {
+    //e.preventDefault();
+    const Username = localStorage.getItem('user');
+    const accessToken = localStorage.getItem('token');
+
+    axios.put(`https://movyis.herokuapp.com/users/${Username}`, {
+      Username: this.state.Username,
+      Password: this.state.Password,
+      Email: this.state.Email,
+      Birthday: this.state.Birthday
+    },
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then(response => {
+        this.setState({
+          Username: response.data.Username,
+          Password: response.data.Password,
+          Email: response.data.Email,
+          Birthday: response.data.Birthday
+        });
+        localStorage.setItem('user', response.data.username);
+        console.log('user updated');
+      })
+      .catch(error => {
+        console.log('Error updating profile');
+      })
+  }
+
+  setUsername(value) {
+    //new Username
+    this.setState({
+      Username: value
+    });
+    this.Username = value;
+  }
+
+  setPassword(value) {
+    //new Password
+    this.setState({
+      Passeord: value
+    });
+    this.Password = value;
+  }
+
+  setEmail(value) {
+    //new Email
+    this.setState({
+      Email: value
+    });
+    this.Email = value;
+  }
+
+  setBirthday(value) {
+    //new Birthday
+    this.setState({
+      Birthday: value
+    });
+    this.Birthday = value;
+  }
+
+  onDeregistration() {
     //delete all user data
+    const Username = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
+    axios.delete(`https://movyis.herokuapp.com/users/${Username}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        console.log(response);
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.open(`/`, "_self");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   render() {
     const { movies, user } = this.props;
-    const { Username, Password, Email, Birthday } = this.state;
+    const { Username, Password, Email, Birthday, FavMovies } = this.state;
 
     console.log('profile-view');
+    console.log(`${Username} ${Password} ${Email} ${Birthday}`);
     // console.log(Username);
     return (
       <Container>
         <Row>
+          <h1>Profile</h1>
           <Col>
-            <h1>Profile</h1>
             <Card className="user-info">
               <Card.Body>
-                <h3>My Info</h3>
-                <div className="user-info">
-                  <span className="label">My name: </span>
-                  <div className="value">{Username}</div>
+                <Card.Title>My Info</Card.Title>
+                <div className="user-info-div">
+                  <div className="user-info">
+                    <span className="label">Username: </span>
+                    <div className="value">{Username}</div>
+                  </div>
+                  <div className="user-info">
+                    <span className="label">E-Mail: </span>
+                    <div className="value">{Email}</div>
+                  </div>
+                  <div className="user-info">
+                    <span className="label">Birthday: </span>
+                    <div className="value">{Birthday}</div>
+                  </div>
                 </div>
-                <div className="user-info">
-                  <span className="label">E-Mail: </span>
-                  <div className="value">{Email}</div>
-                </div>
-                <div className="user-info">
-                  <span className="label">Birthday: </span>
-                  <div className="value">{Birthday}</div>
-                </div>
-                {/* Deregister */}
-                {/* <Link to={} >
-                  <Button className="deregister-button" variant="link">Deregister</Button>
-                </Link> */}
+
+                <Button
+                  className="deregister-button"
+                  variant="submit"
+                  onClick={() => this.onDeregistration()}
+                >
+                  Deregister
+                </Button>
               </Card.Body>
             </Card>
-
           </Col>
           <Col>
-            <Card className="user-info">
-              <h3>Change Info</h3>
+            <Card className="update-user-info">
+              <Card.Body>
+                <Card.Title>Update Profile</Card.Title>
+                <Form onSubmit={(e) => this.editUser(
+                  e,
+                  this.Username,
+                  this.Password,
+                  this.Email,
+                  this.Birthday
+                )}
+                >
+                  <Form.Group className="update-formgroup">
+                    <Form.Label className="label">Username: </Form.Label>
+                    <Form.Control
+                      className="update-control"
+                      type="text"
+                      value={Username}
+                      onChange={e => this.setUsername(e.target.value)}
+                      placeholder="Username should have at least 5 characters"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="update-formgroup">
+                    <Form.Label className="label">Password: </Form.Label>
+                    <Form.Control
+                      className="update-control"
+                      type="password"
+                      value={Password}
+                      onChange={e => this.setPassword(e.target.value)}
+                      placeholder="Enter new password"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="update-formgroup">
+                    <Form.Label className="label">Email: </Form.Label>
+                    <Form.Control
+                      className="update-control"
+                      type="text"
+                      value={Email}
+                      onChange={e => this.setEmail(e.target.value)}
+                      placeholder="e.g. johndoe@example.com"
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group className="update-formgroup">
+                    <Form.Label className="label">Birthday: </Form.Label>
+                    <Form.Control
+                      className="update-control"
+                      type="date"
+                      value={Birthday}
+                      onChange={e => this.setBirthday(e.target.value)}
+                    //placeholder=""
+                    //required
+                    />
+                  </Form.Group>
+                  <Button className="update-button" type="submit" onClick={this.editUser}>Submit</Button>
+                </Form>
+              </Card.Body>
             </Card>
           </Col>
         </Row>
         <Row>
+
           <Col>
-            <Card className="user-info">
-              <h3>Favorite Movies</h3>
+            <Card className="fav-movies-card">
+              <Card.Body>
+
+                <Card.Title>Favorite Movies</Card.Title>
+
+
+                {/* <Card className="movie-card" >
+              <Card.Img variant="top" src={favMovie.ImagePath} />
+              <Card.Body className="movie-card-body" >
+                <Card.Title>{movie.Title}</Card.Title>
+                <Card.Text className="movie-card-text" >{movie.Description}</Card.Text>
+                <Link to={`/movies/${movie._id}`}>
+                  <Button className="movie-card-button" variant="link">Open</Button>
+                </Link>
+              </Card.Body>
+            </Card > */}
+
+
+              </Card.Body>
             </Card>
           </Col>
+
         </Row>
 
       </Container >

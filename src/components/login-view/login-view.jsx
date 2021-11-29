@@ -12,8 +12,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
@@ -40,19 +38,6 @@ export function LoginView(props) {
   return (
 
     <div>
-      {/* <Navbar className="login-navbar" fixed="top" expand="md">
-        <Container>
-          <Navbar.Brand>movyis</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse>
-            <Nav className="navbar-nav">
-              <Nav.Link>Movies</Nav.Link>
-              <Nav.Link>Profile</Nav.Link>
-              <Nav.Link className="navbar-link navbar-link-active">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
 
       <Container>
         <Row>

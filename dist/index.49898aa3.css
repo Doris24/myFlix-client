@@ -161,6 +161,29 @@ div .unregister-button:active {
   color: #000;
   border: #9D9D9D;
 }
+.user-info-div {
+  margin-top: 25px;
+}
+
+.update-user-info .update-button {
+  margin-top: 20px;
+  color: #000;
+  background-color: #9D9D9D;
+  border: #9D9D9D;
+  font-weight: bold;
+}
+
+.update-user-info .update-button:hover {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.update-user-info .update-button:active {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
 .my-flix {
   color: #79B4B7;
 }
