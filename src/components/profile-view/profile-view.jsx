@@ -17,6 +17,7 @@ import CardHeader from 'react-bootstrap/CardHeader';
 
 
 import { Link } from 'react-router-dom';
+import { MovieView } from '../movie-view/movie-view';
 
 export class ProfileView extends React.Component {
 
@@ -28,7 +29,7 @@ export class ProfileView extends React.Component {
       Password: null,
       Email: null,
       Birthday: null,
-      FavMoview: []
+      FavoriteMovies: []
     };
   }
 
@@ -64,7 +65,7 @@ export class ProfileView extends React.Component {
           Password: response.data.Password,
           Email: response.data.Email,
           Birthday: response.data.Birthday,
-          FavMovies: response.data.FavoriteMovies
+          FavoriteMovies: response.data.FavoriteMovies
         });
       })
       .catch(function (error) {
@@ -153,10 +154,11 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies, user } = this.props;
-    const { Username, Password, Email, Birthday, FavMovies } = this.state;
+    const { Username, Password, Email, Birthday, FavoriteMovies } = this.state;
 
     console.log('profile-view');
     console.log(`${Username} ${Password} ${Email} ${Birthday}`);
+    console.log(`FavMovies: ${FavoriteMovies}`);
     // console.log(Username);
     return (
       <Container>
@@ -253,16 +255,41 @@ export class ProfileView extends React.Component {
             </Card>
           </Col>
         </Row>
-        <Row>
 
-          <Col>
-            <Card className="fav-movies-card">
+        <Card className="fav-movies-card">
+          <Row>
+            <Col>
+              <Card.Title> Favorite Movies</Card.Title>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
               <Card.Body>
+                {FavoriteMovies.length === 0 && (
+                  <div>No Favorite Movies</div>
+                )}
+                <Row>
+                  {FavoriteMovies.length > 0 &&
+                    movies.map((movie) => {
+                      if (movie._id ===
+                        FavoriteMovies.find((fav) => fav === movie._id)
+                      ) {
+                        return (
+                          <Card>
+                            <Card.Title>{movie.Title}</Card.Title>
+                          </Card>
+                        )
+                      }
+                    })}
+                </Row>
 
-                <Card.Title>Favorite Movies</Card.Title>
+              </Card.Body>
+            </Col>
+          </Row>
 
 
-                {/* <Card className="movie-card" >
+
+          {/* <Card className="movie-card" >
               <Card.Img variant="top" src={favMovie.ImagePath} />
               <Card.Body className="movie-card-body" >
                 <Card.Title>{movie.Title}</Card.Title>
@@ -274,11 +301,8 @@ export class ProfileView extends React.Component {
             </Card > */}
 
 
-              </Card.Body>
-            </Card>
-          </Col>
 
-        </Row>
+        </Card >
 
       </Container >
 
