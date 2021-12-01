@@ -109,7 +109,7 @@ export class MainView extends React.Component {
     return (
       <Router>
         //Navigation
-        <Navbar className="navbar-container" fixed="top" expand="md">
+        <Navbar className="navbar-container" fixed="top" expand="sm">
           <Container>
             <Navbar.Brand>movyis</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -123,6 +123,7 @@ export class MainView extends React.Component {
           </Container>
         </Navbar>
         <Row className="main-view justify-content-md-center">
+
           {/* <Routes> */}
           <Route exact path="/" render={() => {
             //if there is no user, the LoginView is rendered, if user is logged in, the user details are passed as a prop to the LoginView
@@ -134,7 +135,7 @@ export class MainView extends React.Component {
 
             //display moviecards
             return movies.map(m => (
-              <Col md={3} key={m._id}>
+              <Col xs={12} sm={4} md={3} key={m._id}>
                 <MovieCard movie={m} />
               </Col>
             ))
@@ -188,7 +189,7 @@ export class MainView extends React.Component {
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <Redirect to="/" />;
-            return <Col md={8}>
+            return <Col md={12}>
               <ProfileView
                 movies={movies}
                 user={user === match.params.username}

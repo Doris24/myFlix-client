@@ -161,28 +161,90 @@ div .unregister-button:active {
   color: #000;
   border: #9D9D9D;
 }
+.profile-container {
+  margin-top: 0;
+}
+
+.profile-card {
+  margin-bottom: 5px;
+}
+
+.user-info .deregister-button {
+  margin-top: 15px;
+  color: #000;
+  background-color: #d68b8b;
+  border: #d68b8b;
+  font-weight: bold;
+}
+
+.user-info .deregister-button:hover {
+  background-color: #e9c1c1;
+  border: #e9c1c1;
+  color: #000;
+}
+
+.user-info .deregister-button:active {
+  background-color: #e9c1c1;
+  border: #e9c1c1;
+  color: #000;
+}
+
 .user-info-div {
   margin-top: 25px;
 }
 
-.update-user-info .update-button {
-  margin-top: 20px;
+.update-user-info .button {
+  margin-top: 15px;
   color: #000;
   background-color: #9D9D9D;
   border: #9D9D9D;
   font-weight: bold;
 }
 
-.update-user-info .update-button:hover {
+.update-user-info .button:hover {
   background-color: #FEFBF3;
   color: #000;
   border: #9D9D9D;
 }
 
-.update-user-info .update-button:active {
+.update-user-info .button:active {
   background-color: #FEFBF3;
   color: #000;
   border: #9D9D9D;
+}
+
+.movie-card {
+  margin-bottom: 5px;
+}
+
+.movie-card-body .button {
+  margin-top: 15px;
+  color: #000;
+  background-color: #9D9D9D;
+  border: #9D9D9D;
+  font-weight: bold;
+}
+
+.movie-card-body .button:hover {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.movie-card-body .button:active {
+  background-color: #FEFBF3;
+  color: #000;
+  border: #9D9D9D;
+}
+
+.link-to-movie {
+  text-decoration: none;
+  color: #000;
+}
+
+.link-to-movie:hover {
+  text-decoration: underline;
+  color: #000;
 }
 .my-flix {
   color: #79B4B7;

@@ -13,6 +13,9 @@ import Col from 'react-bootstrap/Col';
 import { CardGroup, Form } from 'react-bootstrap';
 import CardHeader from 'react-bootstrap/CardHeader';
 
+import { MovieView } from '../movie-view/movie-view';
+import { MovieCard } from '../movie-card/movie-card';
+
 //import { FavMoviesView } from './fav-movies';
 
 
@@ -152,6 +155,10 @@ export class ProfileView extends React.Component {
       });
   }
 
+  removeFavMovie() {
+    //remove Movie from FavList
+  }
+
   render() {
     const { movies, user } = this.props;
     const { Username, Password, Email, Birthday, FavoriteMovies } = this.state;
@@ -161,11 +168,11 @@ export class ProfileView extends React.Component {
     console.log(`FavMovies: ${FavoriteMovies}`);
     // console.log(Username);
     return (
-      <Container>
-        <Row>
+      <Container className="profile-container">
+        <Row className="main-view justify-content-md-center">
           <h1>Profile</h1>
-          <Col>
-            <Card className="user-info">
+          <Col sm={12} md={6}>
+            <Card className="user-info profile-card">
               <Card.Body>
                 <Card.Title>My Info</Card.Title>
                 <div className="user-info-div">
@@ -188,13 +195,13 @@ export class ProfileView extends React.Component {
                   variant="submit"
                   onClick={() => this.onDeregistration()}
                 >
-                  Deregister
+                  Delete Profile
                 </Button>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            <Card className="update-user-info">
+            <Card className="update-user-info profile-card">
               <Card.Body>
                 <Card.Title>Update Profile</Card.Title>
                 <Form onSubmit={(e) => this.editUser(
@@ -249,61 +256,57 @@ export class ProfileView extends React.Component {
                     //required
                     />
                   </Form.Group>
-                  <Button className="update-button" type="submit" onClick={this.editUser}>Submit</Button>
+                  <Button className="button" type="submit" onClick={this.editUser}>Submit</Button>
                 </Form>
               </Card.Body>
             </Card>
           </Col>
         </Row>
 
-        <Card className="fav-movies-card">
-          <Row>
-            <Col>
-              <Card.Title> Favorite Movies</Card.Title>
-            </Col>
-          </Row>
+        <Card className="fav-movies-card profile-card justify-content-md-center">
           <Row>
             <Col>
               <Card.Body>
-                {FavoriteMovies.length === 0 && (
-                  <div>No Favorite Movies</div>
-                )}
-                <Row>
-                  {FavoriteMovies.length > 0 &&
-                    movies.map((movie) => {
-                      if (movie._id ===
-                        FavoriteMovies.find((fav) => fav === movie._id)
-                      ) {
-                        return (
-                          <Card>
-                            <Card.Title>{movie.Title}</Card.Title>
-                          </Card>
-                        )
-                      }
-                    })}
-                </Row>
-
+                <Card.Title> Favorite Movies</Card.Title>
               </Card.Body>
             </Col>
           </Row>
+          <Row >
+            {/* <Card.Body> */}
+            <div>
+              {FavoriteMovies.length === 0 && (
+                <Col>
+                  <h5>No Favorite Movies</h5>
+                </Col>
+              )}
+            </div>
+            {FavoriteMovies.length > 0 &&
+              movies.map((movie) => {
+                if (movie._id ===
+                  FavoriteMovies.find((fav) => fav === movie._id)
+                ) {
+                  return (
+                    // <Row className="main-view justify-content-md-center">
+                    <Col xs={12} sm={4} md={3} key={movie._id}>
+                      <Card className="movie-card" >
+                        <Card.Img variant="top" src={movie.ImagePath} />
+                        <Card.Body className="movie-card-body" >
+                          <Link to={`/movies/${movie._id}`} className="link-to-movie">
+                            <Card.Title className="movie-title">{movie.Title}</Card.Title>
+                          </Link>
+                          {/* <Card.Text className="movie-card-text" >{movie.Description}</Card.Text> */}
+                          <Button className="button" type="submit" onClick={this.removeFavMovie}>Remove</Button>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                    // </Row>
+                  )
+                }
+              })}
+            {/* </Card.Body> */}
 
-
-
-          {/* <Card className="movie-card" >
-              <Card.Img variant="top" src={favMovie.ImagePath} />
-              <Card.Body className="movie-card-body" >
-                <Card.Title>{movie.Title}</Card.Title>
-                <Card.Text className="movie-card-text" >{movie.Description}</Card.Text>
-                <Link to={`/movies/${movie._id}`}>
-                  <Button className="movie-card-button" variant="link">Open</Button>
-                </Link>
-              </Card.Body>
-            </Card > */}
-
-
-
+          </Row>
         </Card >
-
       </Container >
 
 
