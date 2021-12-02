@@ -22,10 +22,12 @@ div .navbar-link-active {
 
 .login-form .login-button {
     margin-top: 20px;
+    margin-right: 20px;
     color: $color-text;
     background-color: $color-second;
     border: $color-second;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .login-form .login-button:hover {

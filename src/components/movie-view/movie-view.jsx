@@ -22,10 +22,10 @@ export class MovieView extends React.Component {
       <Container className='Movie-Container'>
         <Row>
           <Col>
-            <Card>
+            <Card className="movie-card">
               <Card.Body className="movie-view">
                 <div className="movie-poster">
-                  <img src={movie.ImagePath} alt="Movie-Poster" />
+                  <img src={movie.ImagePath} className="movie-poster-img" alt="Movie-Poster" />
                 </div>
                 <h1 className="movie-title">{movie.Title}</h1>
                 <div className="movie-description">

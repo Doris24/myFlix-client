@@ -4,6 +4,11 @@ $color-light: #FEFBF3;
 $color-extra: #F8F0DF;
 $color-text: #000; //text
 
+.movie-poster-img {
+    position: relative;
+    max-width: 100%;
+}
+
 .label {
     font-weight: bold; 
 }

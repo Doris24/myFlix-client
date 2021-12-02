@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import axios from 'axios'; // used to fetch movie
 
 //Routing - BrowserRouting is used to implement state-based routing (HashRouter for hash-based)
@@ -18,7 +18,6 @@ import './main-view.scss';
 // Bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -87,7 +86,6 @@ export class MainView extends React.Component {
     localStorage.setItem('user', authData.user.Username);
   }
 
-
   //Logout
   onLoggedOut() {
     localStorage.removeItem('token');
@@ -103,8 +101,6 @@ export class MainView extends React.Component {
 
     const profile = `/users/${user}`;
     console.log("main-view-render");
-
-
 
     return (
       <Router>
@@ -199,45 +195,6 @@ export class MainView extends React.Component {
           {/* </Routes> */}
         </Row>
       </Router>
-
-      // <div>
-      //   <Navbar className="navbar-container" fixed="top" expand="md">
-      //     <Container>
-      //       <Navbar.Brand>movyis</Navbar.Brand>
-      //       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      //       <Navbar.Collapse>
-      //         <Nav className="navbar-nav">
-      //           <Nav.Link className="navbar-link navbar-link-active">Movies</Nav.Link>
-      //           <Nav.Link>Profile</Nav.Link>
-      //           <Nav.Link onClick={() => { this.onLoggedOut() }}>Logout</Nav.Link>
-      //         </Nav>
-      //       </Navbar.Collapse>
-      //     </Container>
-      //   </Navbar>
-
-      //   <Row className="main-view justify-content-md-center">
-      //     {selectedMovie
-      //       ? (
-      //         <Col>
-      //           <MovieView
-      //             movie={selectedMovie}
-      //             onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}
-      //           />
-      //         </Col>
-      //       )
-      //       : movies.map(movie => (
-      //         <Col lg={3} md={4} sm={6} key={movie._id}>
-      //           <MovieCard
-      //             movie={movie}
-      //             onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}
-      //           />
-
-      //         </Col>
-      //       ))
-      //     }
-      //     <Button className="unregister-button" type="submit">Unregister</Button>
-      //   </Row>
-      // </div>
     );
   }
 }

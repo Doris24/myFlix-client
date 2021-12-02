@@ -25,6 +25,11 @@
   color: #000;
   border: #9D9D9D;
 }
+.movie-poster-img {
+  position: relative;
+  max-width: 100%;
+}
+
 .label {
   font-weight: bold;
 }
@@ -70,10 +75,12 @@ div .navbar-link-active {
 
 .login-form .login-button {
   margin-top: 20px;
+  margin-right: 20px;
   color: #000;
   background-color: #9D9D9D;
   border: #9D9D9D;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .login-form .login-button:hover {
@@ -214,7 +221,7 @@ div .unregister-button:active {
 }
 
 .movie-card {
-  margin-bottom: 5px;
+  margin: 10px;
 }
 
 .movie-card-body .button {
