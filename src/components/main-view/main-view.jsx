@@ -1,10 +1,17 @@
 import React from 'react';
 import axios from 'axios'; // used to fetch movie
 
+import { connect } from 'react-redux';
+
 //Routing - BrowserRouting is used to implement state-based routing (HashRouter for hash-based)
 import { BrowserRouter as Router, Routes, Route, Redirect, NavLink } from 'react-router-dom';
 
-import { MovieCard } from '../movie-card/movie-card';
+// #0
+import { setMovies, setUser } from '../../actions/actions';
+
+import MoviesList from '../movies-list/movies-list';
+
+// #1 components
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -22,14 +29,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
-export class MainView extends React.Component {
+
+class MainView extends React.Component {
 
   constructor() {
     super(); // initializes the component's state, calls constructor of the parent class (here: React.Component)
     //initial state is set to null
     this.state = {
-      movies: [],
-      // selectedMovie: null, //state value to identify if movie cards were clicked
       user: null
     }
   }
@@ -52,10 +58,7 @@ export class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
     })
       .then(response => {
-        // Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -97,7 +100,8 @@ export class MainView extends React.Component {
 
   //what will be seen on screen
   render() {
-    const { movies, user } = this.state;
+    const { movies } = this.props;
+    const { user } = this.state;
 
     const profile = `/users/${user}`;
     console.log("main-view-render");
@@ -130,11 +134,12 @@ export class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
 
             //display moviecards
-            return movies.map(m => (
-              <Col xs={12} sm={4} md={3} key={m._id}>
-                <MovieCard movie={m} />
-              </Col>
-            ))
+            return <MoviesList movies={movies} />
+            // return movies.map(m => (
+            //   <Col xs={12} sm={4} md={3} key={m._id}>
+            //     <MovieCard movie={m} />
+            //   </Col>
+            // ))
           }} />
 
           <Route path="/register" render={() => {
@@ -198,3 +203,12 @@ export class MainView extends React.Component {
     );
   }
 }
+
+//function that will allow the component to subscribe to store updates
+//picking what your component needs from your application’s global state
+let mapStateToProps = state => { // the store state
+  return { movies: state.movies } // return new props
+}
+
+// function connect(mapStateToProps, mapDispatchToProps, mergePrpos, options)
+export default connect(mapStateToProps, { setMovies })(MainView);
