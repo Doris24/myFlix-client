@@ -56,16 +56,26 @@ export class ProfileView extends React.Component {
     axios.get(`https://movyis.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
     })
-      .then(response => {
-        // Assign the result to the state
-        this.setState({
+      .then((response) => {
+        //this.props.setMovies(response.data);
+        //setUser(response.data);
+        setUser({
           Username: response.data.Username,
           // Password: response.data.Password,
           Email: response.data.Email,
           Birthday: this.formatDate(response.data.Birthday),
           FavoriteMovies: response.data.FavoriteMovies
         });
+        console.log(Username, response.data);
       })
+      // this.setState({
+      //   Username: response.data.Username,
+      //   // Password: response.data.Password,
+      //   Email: response.data.Email,
+      //   Birthday: this.formatDate(response.data.Birthday),
+      //   FavoriteMovies: response.data.FavoriteMovies
+      // });
+      //})
       .catch(function (error) {
         console.log(error);
       });
@@ -85,14 +95,23 @@ export class ProfileView extends React.Component {
       { headers: { Authorization: `Bearer ${accessToken}` } }
     )
       .then(response => {
-        this.setState({
-          Username: response.data.Username,
-          // Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday
-        });
-        localStorage.setItem('user', response.data.username);
-        console.log('user updated');
+        // this.setState({
+        //   Username: response.data.Username,
+        //   // Password: response.data.Password,
+        //   Email: response.data.Email,
+        //   Birthday: response.data.Birthday
+        // });
+        // localStorage.setItem('user', response.data.username);
+        // console.log('user updated');
+        localStorage.setItem('user', this.state.Username);
+
+        this.props.setUser({
+          Username: this.state.Username,
+          Password: this.state.Password,
+          Email: this.state.Email,
+          Birthday: this.state.Birthday
+        })
+        console.log('User updated');
       })
       .catch(error => {
         console.log('Error updating profile');
@@ -322,8 +341,9 @@ export class ProfileView extends React.Component {
 
 let mapStateToProps = state => {
   return {
-    user: state.user
-  }, { movies: state.movies }
+    user: state.user,
+    movies: state.movies
+  }
 }
 
 export default connect(mapStateToProps, { setUser })(ProfileView);

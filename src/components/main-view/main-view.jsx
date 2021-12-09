@@ -220,8 +220,11 @@ class MainView extends React.Component {
 //function that will allow the component to subscribe to store updates
 //picking what your component needs from your application’s global state
 let mapStateToProps = state => { // the store state
-  return { movies: state.movies } // return new props
+  return {
+    movies: state.movies,
+    user: state.user
+  } // return new props
 }
 
 // function connect(mapStateToProps, mapDispatchToProps, mergePrpos, options)
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
