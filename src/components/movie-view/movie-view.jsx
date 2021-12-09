@@ -11,13 +11,40 @@ import Col from 'react-bootstrap/Col';
 
 import './movie-view.scss';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 
 export class MovieView extends React.Component {
 
+  addMovieToFavList = (e) => {
+    e.preventDefault();
+
+    console.log('addMovie');
+
+    const Username = localStorage.getItem("user");
+    const accessToken = localStorage.getItem("token");
+    const { movie } = this.props;
+
+    console.log(Username);
+
+    axios.post(`https://movyis.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+
+    },
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    )
+      .then(response => {
+        alert(`Movie added to Favorites`)
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render() {
     const { movie, onBackClick } = this.props;
-    console.log("MovieviewRender");
+    console.log('moviedata: ' + movie.Title);
     return (
       <Container className='Movie-Container'>
         <Row>
@@ -33,22 +60,28 @@ export class MovieView extends React.Component {
                   <div className="value">{movie.Description}</div>
                 </div>
                 <div className="movie-genre-name">
+
                   <span className="label">Genre: </span>
-                  <div className="value">{movie.Genre.Name}</div>
-                  <Link to={`/genres/${movie.Genre.Name}`}>
-                    <Button className="movie-button" variant="link">Genre</Button>
+                  <Link to={`/genres/${movie.Genre.Name}`} className="link">
+                    <div className="value">{movie.Genre.Name}</div>
                   </Link>
                 </div>
                 <div className="movie-director-name">
                   <span className="label">Director: </span>
-                  <div className="value">{movie.Director.Name}</div>
-                  <Link to={`/directors/${movie.Director.Name}`}>
-                    <Button className="movie-button" variant="link">Director</Button>
+                  <Link to={`/directors/${movie.Director.Name}`} className="link">
+                    <div className="value">{movie.Director.Name}</div>
                   </Link>
                 </div>
                 <div className="movie-button-div">
+                  <Button className="movie-button add-movie-button"
+                    type="submit"
+                    onClick={this.addMovieToFavList}>
+                    Add to Favorites
+                  </Button>
                   <Button className="movie-button"
-                    onClick={() => { onBackClick(); }}>Back</Button>
+                    onClick={() => { onBackClick(); }}>
+                    Back
+                  </Button>
                 </div>
               </Card.Body>
             </Card>

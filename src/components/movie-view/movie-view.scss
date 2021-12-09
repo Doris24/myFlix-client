@@ -17,8 +17,20 @@ $color-text: #000; //text
    margin: 0px 25px 10px 25px;
 }
 
+.link {
+    color: black;
+}
+.link:hover {
+    color: $color-second;
+}
+
+.movie-button-div {
+    align-items: center;
+}
+
 .movie-button-div .movie-button {
     margin-top: 10px;
+    margin-right: 10px;
     color: $color-text;
     background-color: $color-second;
     border: $color-second;
@@ -31,7 +43,7 @@ $color-text: #000; //text
     border: $color-second;
 }
 
-.movie-button-div .movie-button:active {
+.movie-button-div .movie-button:after {
     background-color: $color-light;
     color: $color-text;
     border: $color-second;

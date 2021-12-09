@@ -23,7 +23,7 @@ export function RegistrationView(props) {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username, password, email, birthday);
+    // console.log(username, password, email, birthday);
 
     axios.post('https://movyis.herokuapp.com/users', {
       Username: username,

@@ -12,7 +12,7 @@ $color-text: #000; //text
    margin: 0px 25px 10px 25px;
 }
 
-.director-button-div .director-button {
+.director-button-div .director-button-link .back-to-movies-button {
     margin-top: 10px;
     color: $color-text;
     background-color: $color-second;
@@ -20,13 +20,13 @@ $color-text: #000; //text
     font-weight: bold;
 }
 
-.director-button-div .director-button:hover {
+.director-button-div .back-to-movies-button:hover {
     background-color: $color-light;
     color: $color-text;
     border: $color-second;
 }
 
-.director-button-div .director-button:active {
+.director-button-div .back-to-movies-button:active {
     background-color: $color-light;
     color: $color-text;
     border: $color-second;
