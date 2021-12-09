@@ -22804,7 +22804,7 @@ var _navDefault = parcelHelpers.interopDefault(_nav);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 //logo img
-var _logoPng = require("./logo.png");
+var _logoPng = require("../../../img/logo.png");
 var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -23186,7 +23186,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","../movie-view/movie-view":"8S478","../login-view/login-view":"7IGV8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../registration-view/registration-view":"lGbHG","./main-view.scss":"hRkrD","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-bootstrap/Container":"gFkXb","react-router-dom":"etVME","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","../profile-view/profile-view":"aZt7f","react-redux":"lT3ms","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr","./logo.png":"1Q3EX"}],"1IeuP":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","../movie-view/movie-view":"8S478","../login-view/login-view":"7IGV8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../registration-view/registration-view":"lGbHG","./main-view.scss":"hRkrD","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-bootstrap/Container":"gFkXb","react-router-dom":"etVME","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","../profile-view/profile-view":"aZt7f","react-redux":"lT3ms","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr","../../../img/logo.png":"ajnqE"}],"1IeuP":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"ePOwX"}],"ePOwX":[function(require,module,exports) {
@@ -36259,8 +36259,8 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-bootstrap/Button":"64Pgd","react-bootstrap/Card":"jeXXJ","react-router-dom":"etVME","./movie-card.scss":"8rKa8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"8rKa8":[function() {},{}],"1Q3EX":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('a8mfF') + "logo.3690b3bd.png" + "?" + Date.now();
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-bootstrap/Button":"64Pgd","react-bootstrap/Card":"jeXXJ","react-router-dom":"etVME","./movie-card.scss":"8rKa8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"8rKa8":[function() {},{}],"ajnqE":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('a8mfF') + "logo.bfe54092.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
 "use strict";

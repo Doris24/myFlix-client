@@ -30,7 +30,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
 //logo img
-import img from './logo.png'
+import img from '../../../img/logo.png'
 
 
 class MainView extends React.Component {
