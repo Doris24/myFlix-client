@@ -11,8 +11,21 @@
   margin: 0px 25px 10px 25px;
 }
 
+.link {
+  color: black;
+}
+
+.link:hover {
+  color: #9D9D9D;
+}
+
+.movie-button-div {
+  align-items: center;
+}
+
 .movie-button-div .movie-button {
   margin-top: 10px;
+  margin-right: 10px;
   color: #000;
   background-color: #9D9D9D;
   border: #9D9D9D;
@@ -25,7 +38,7 @@
   border: #9D9D9D;
 }
 
-.movie-button-div .movie-button:active {
+.movie-button-div .movie-button:after {
   background-color: #FEFBF3;
   color: #000;
   border: #9D9D9D;

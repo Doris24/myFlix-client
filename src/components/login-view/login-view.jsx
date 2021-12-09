@@ -20,7 +20,7 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault(); //prevents the default refresh of the page after button (type="submit") click
-    console.log(username, password);
+    // console.log(username, password);
     /* Send a POST request to the server for authentication */
     axios.post('https://movyis.herokuapp.com/login', {
       Username: username,
@@ -85,6 +85,10 @@ export function LoginView(props) {
 }
 
 LoginView.propTypes = {
+  user: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired
+  }),
   onLoggedIn: PropTypes.func.isRequired
 }
 
