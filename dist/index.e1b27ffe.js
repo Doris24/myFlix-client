@@ -22803,6 +22803,9 @@ var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
+//logo img
+var _logoPng = require("./logo.png");
+var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super(); // initializes the component's state, calls constructor of the parent class (here: React.Component)
@@ -22872,7 +22875,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 110,
+                lineNumber: 113,
                 columnNumber: 7
             },
             __self: this,
@@ -22884,14 +22887,14 @@ class MainView extends _reactDefault.default.Component {
                     expand: "sm",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 112,
+                        lineNumber: 115,
                         columnNumber: 9
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 113,
+                            lineNumber: 116,
                             columnNumber: 11
                         },
                         __self: this,
@@ -22899,7 +22902,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 117,
                                     columnNumber: 13
                                 },
                                 __self: this,
@@ -22908,18 +22911,18 @@ class MainView extends _reactDefault.default.Component {
                                     className: "navbar-logo",
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 115,
+                                        lineNumber: 118,
                                         columnNumber: 15
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                                         alt: "movyis",
-                                        src: "logo.png",
+                                        src: _logoPngDefault.default,
                                         height: "50px",
-                                        className: "navbar-logo",
+                                        className: "navbar-logo-img",
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 119,
                                             columnNumber: 17
                                         },
                                         __self: this
@@ -22930,7 +22933,7 @@ class MainView extends _reactDefault.default.Component {
                                 "aria-controls": "basic-navbar-nav",
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 125,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 },
                                 __self: this
@@ -22938,7 +22941,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 126,
+                                    lineNumber: 129,
                                     columnNumber: 13
                                 },
                                 __self: this,
@@ -22946,7 +22949,7 @@ class MainView extends _reactDefault.default.Component {
                                     className: "navbar-nav",
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 127,
+                                        lineNumber: 130,
                                         columnNumber: 15
                                     },
                                     __self: this,
@@ -22956,7 +22959,7 @@ class MainView extends _reactDefault.default.Component {
                                             className: "navbar-link",
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 128,
+                                                lineNumber: 131,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22967,7 +22970,7 @@ class MainView extends _reactDefault.default.Component {
                                             className: "navbar-link",
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 129,
+                                                lineNumber: 132,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22981,7 +22984,7 @@ class MainView extends _reactDefault.default.Component {
                                             },
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 130,
+                                                lineNumber: 133,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22997,7 +23000,7 @@ class MainView extends _reactDefault.default.Component {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 135,
+                        lineNumber: 138,
                         columnNumber: 9
                     },
                     __self: this,
@@ -23028,7 +23031,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 138,
+                                lineNumber: 141,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23047,7 +23050,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 155,
+                                lineNumber: 158,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23074,7 +23077,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 162,
+                                lineNumber: 165,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23101,7 +23104,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 174,
+                                lineNumber: 177,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23128,7 +23131,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 186,
+                                lineNumber: 189,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23155,7 +23158,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 198,
+                                lineNumber: 201,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23183,7 +23186,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","../movie-view/movie-view":"8S478","../login-view/login-view":"7IGV8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../registration-view/registration-view":"lGbHG","./main-view.scss":"hRkrD","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-bootstrap/Container":"gFkXb","react-router-dom":"etVME","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","../profile-view/profile-view":"aZt7f","react-redux":"lT3ms","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr"}],"1IeuP":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","../movie-view/movie-view":"8S478","../login-view/login-view":"7IGV8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","../registration-view/registration-view":"lGbHG","./main-view.scss":"hRkrD","react-bootstrap/Row":"eR7YE","react-bootstrap/Col":"kxhZp","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-bootstrap/Container":"gFkXb","react-router-dom":"etVME","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","../profile-view/profile-view":"aZt7f","react-redux":"lT3ms","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr","./logo.png":"1Q3EX"}],"1IeuP":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"ePOwX"}],"ePOwX":[function(require,module,exports) {
@@ -36256,7 +36259,45 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-bootstrap/Button":"64Pgd","react-bootstrap/Card":"jeXXJ","react-router-dom":"etVME","./movie-card.scss":"8rKa8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"8rKa8":[function() {},{}],"hlAnh":[function() {},{}],"ifMRI":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-bootstrap/Button":"64Pgd","react-bootstrap/Card":"jeXXJ","react-router-dom":"etVME","./movie-card.scss":"8rKa8","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"8rKa8":[function() {},{}],"1Q3EX":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('a8mfF') + "logo.3690b3bd.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"hlAnh":[function() {},{}],"ifMRI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes

@@ -29,6 +29,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
+//logo img
+import img from './logo.png'
+
 
 class MainView extends React.Component {
 
@@ -115,9 +118,9 @@ class MainView extends React.Component {
               <NavLink to={`/`} className="navbar-logo">
                 <img
                   alt="movyis"
-                  src="logo.png"
+                  src={img}
                   height="50px"
-                  className="navbar-logo"
+                  className="navbar-logo-img"
                 />
               </NavLink>
             </Navbar.Brand>
