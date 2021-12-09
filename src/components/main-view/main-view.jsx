@@ -111,7 +111,17 @@ class MainView extends React.Component {
         //Navigation
         <Navbar className="navbar-container" fixed="top" expand="sm">
           <Container>
-            <Navbar.Brand>movyis</Navbar.Brand>
+            <Navbar.Brand>
+              <NavLink to={`/`} className="navbar-logo">
+                <img
+                  alt="movyis"
+                  src="logo.png"
+                  height="50px"
+                  className="navbar-logo"
+                />
+              </NavLink>
+            </Navbar.Brand>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
               <Nav className="navbar-nav">

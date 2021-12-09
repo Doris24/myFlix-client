@@ -13,6 +13,12 @@ div .navbar-link {
     padding: 0px 10px;
     text-decoration: none;
 }
+div .navbar-logo {
+    color: $color-text;
+    font-weight: bold;
+    padding: 0px 10px;
+    text-decoration: none;
+}
 
 div .navbar-link:hover {
     color: $color-text;

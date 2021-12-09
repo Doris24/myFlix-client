@@ -22903,13 +22903,34 @@ class MainView extends _reactDefault.default.Component {
                                     columnNumber: 13
                                 },
                                 __self: this,
-                                children: "movyis"
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.NavLink, {
+                                    to: `/`,
+                                    className: "navbar-logo",
+                                    __source: {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 115,
+                                        columnNumber: 15
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        alt: "movyis",
+                                        src: "logo.png",
+                                        height: "50px",
+                                        className: "navbar-logo",
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 116,
+                                            columnNumber: 17
+                                        },
+                                        __self: this
+                                    })
+                                })
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
                                 "aria-controls": "basic-navbar-nav",
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 },
                                 __self: this
@@ -22917,7 +22938,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 116,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 },
                                 __self: this,
@@ -22925,7 +22946,7 @@ class MainView extends _reactDefault.default.Component {
                                     className: "navbar-nav",
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 117,
+                                        lineNumber: 127,
                                         columnNumber: 15
                                     },
                                     __self: this,
@@ -22935,7 +22956,7 @@ class MainView extends _reactDefault.default.Component {
                                             className: "navbar-link",
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 118,
+                                                lineNumber: 128,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22946,7 +22967,7 @@ class MainView extends _reactDefault.default.Component {
                                             className: "navbar-link",
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 119,
+                                                lineNumber: 129,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22960,7 +22981,7 @@ class MainView extends _reactDefault.default.Component {
                                             },
                                             __source: {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 120,
+                                                lineNumber: 130,
                                                 columnNumber: 17
                                             },
                                             __self: this,
@@ -22976,7 +22997,7 @@ class MainView extends _reactDefault.default.Component {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 125,
+                        lineNumber: 135,
                         columnNumber: 9
                     },
                     __self: this,
@@ -23007,7 +23028,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 128,
+                                lineNumber: 138,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23026,7 +23047,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 145,
+                                lineNumber: 155,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23053,7 +23074,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 152,
+                                lineNumber: 162,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23080,7 +23101,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 164,
+                                lineNumber: 174,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23107,7 +23128,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 176,
+                                lineNumber: 186,
                                 columnNumber: 11
                             },
                             __self: this
@@ -23134,7 +23155,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 188,
+                                lineNumber: 198,
                                 columnNumber: 11
                             },
                             __self: this
