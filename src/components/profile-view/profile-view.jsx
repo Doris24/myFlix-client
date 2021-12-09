@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './profile-view.scss';
 
@@ -13,6 +14,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
 import { Link } from 'react-router-dom';
+
+import { setUser } from '../../actions/actions';
 
 export class ProfileView extends React.Component {
 
@@ -72,7 +75,7 @@ export class ProfileView extends React.Component {
     e.preventDefault();
     const Username = localStorage.getItem('user');
     const accessToken = localStorage.getItem('token');
-    console.log(this.state)
+    //console.log(this.state)
     axios.put(`https://movyis.herokuapp.com/users/${Username}`, {
       Username: this.state.Username,
       Password: this.state.Password,
@@ -316,6 +319,14 @@ export class ProfileView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = state => {
+  return {
+    user: state.user
+  }, { movies: state.movies }
+}
+
+export default connect(mapStateToProps, { setUser })(ProfileView);
 
 //specify how MovieView's props should look
 ProfileView.propTypes = {
