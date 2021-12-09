@@ -22,7 +22,7 @@ const store = createStore(moviesApp, devToolsEnhancer());
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      // Provider: stare will be accessible from the entire app
+      // Provider: store will be accessible from the entire app
       <Provider store={store}>
         <Container>
           <MainView />

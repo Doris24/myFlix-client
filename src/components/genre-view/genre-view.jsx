@@ -20,35 +20,35 @@ export class GenreView extends React.Component {
     console.log(genre);
 
     return (
-      //<Container className='genre-container'>
-      <Row>
-        <Col>
-          <Card>
-            <Card.Body className="genre-view">
-              {/* <span className="label">Name: </span> */}
-              <h1 className="genre-name" >{genre.Name}</h1>
-              <div className="genre-description">
-                <span className="label">Description: </span>
-                <div className="value">{genre.Description}</div>
-              </div>
-              <div className="genre-button-div">
-                <Link to={`/`} className="director-button-link">
-                  <Button
-                    style={{
-                      'margin- top': '10px', color: '#000',
-                      'background-color': '#9D9D9D',
-                      border: '#9D9D9D', 'font-weight': 'bold'
-                    }}
-                    className="back-to-movies-button">
-                    Back to movie list
-                  </Button>
-                </Link>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-      //</Container >
+      <Container className='genre-container'>
+        <Row>
+          <Col>
+            <Card>
+              <Card.Body className="genre-view">
+                {/* <span className="label">Name: </span> */}
+                <h1 className="genre-name" >{genre.Name}</h1>
+                <div className="genre-description">
+                  <span className="label">Description: </span>
+                  <div className="value">{genre.Description}</div>
+                </div>
+                <div className="genre-button-div">
+                  <Link to={`/`} className="director-button-link">
+                    <Button
+                      style={{
+                        'margin- top': '10px', color: '#000',
+                        'background-color': '#9D9D9D',
+                        border: '#9D9D9D', 'font-weight': 'bold'
+                      }}
+                      className="back-to-movies-button">
+                      Back to movie list
+                    </Button>
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container >
 
     );
   }
