@@ -32,8 +32,16 @@ export class GenreView extends React.Component {
                 <div className="value">{genre.Description}</div>
               </div>
               <div className="genre-button-div">
-                <Link to={`/`}>
-                  <Button className="back-to-movies-button" variant="link">Back to movie list</Button>
+                <Link to={`/`} className="director-button-link">
+                  <Button
+                    style={{
+                      'margin- top': '10px', color: '#000',
+                      'background-color': '#9D9D9D',
+                      border: '#9D9D9D', 'font-weight': 'bold'
+                    }}
+                    className="back-to-movies-button">
+                    Back to movie list
+                  </Button>
                 </Link>
               </div>
             </Card.Body>
@@ -48,8 +56,8 @@ export class GenreView extends React.Component {
 
 //specify how GenreView's props should look
 GenreView.propTypes = {
-  genre: PropTypes.shape({ //must include a movie object
-    Name: PropTypes.string.isRequired, //must contain a Title key(must be string)
+  genre: PropTypes.shape({
+    Name: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired
   }).isRequired,
   onBackClick: PropTypes.func.isRequired
