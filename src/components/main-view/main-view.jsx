@@ -17,7 +17,7 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
-import { ProfileView } from '../profile-view/profile-view';
+import ProfileView from '../profile-view/profile-view';
 
 
 import './main-view.scss';
@@ -52,7 +52,22 @@ class MainView extends React.Component {
         user: localStorage.getItem('user')
       });
       this.getMovies(accessToken);
+      this.getUser(accessToken);
     }
+  }
+
+  getUser(token) {
+    const Username = localStorage.getItem('user');
+    axios.get(`https://movyis.herokuapp.com/users/${Username}`, {
+      headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
+    })
+      .then((response) => {
+        this.props.setUser(response.data);
+      })
+
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   //GET request to get movies endpoint of the Node.js API
@@ -72,7 +87,6 @@ class MainView extends React.Component {
   //updates user state, when successfully logged in
   //authData logs the state
   onLoggedIn(authData) {
-    console.log(authData);
     this.setState({
       user: authData.user.Username //user's username is saved in the user state
     });
@@ -84,7 +98,6 @@ class MainView extends React.Component {
   }
 
   onRegistration(user) {
-    console.log(user);
     this.setState({
       user: authData.user.Username
     });
@@ -107,7 +120,6 @@ class MainView extends React.Component {
     const { user } = this.state;
 
     const profile = `/users/${user}`;
-    console.log("main-view-render");
 
     return (
       <Router>
@@ -148,11 +160,6 @@ class MainView extends React.Component {
 
             //display moviecards
             return <MoviesList movies={movies} />
-            // return movies.map(m => (
-            //   <Col xs={12} sm={4} md={3} key={m._id}>
-            //     <MovieCard movie={m} />
-            //   </Col>
-            // ))
           }} />
 
           <Route path="/register" render={() => {

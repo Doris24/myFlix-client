@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 
 import { setUser } from '../../actions/actions';
 
-export class ProfileView extends React.Component {
+class ProfileView extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,7 +37,15 @@ export class ProfileView extends React.Component {
       this.setState({
         user: localStorage.getItem('user')
       });
-      this.getUser(accessToken);
+      this.setState({
+        Username: this.props.user.Username,
+        Password: '',
+        Email: this.props.user.Email,
+        Birthday: '',
+        FavoriteMovies: []
+      })
+
+      //this.getUser(accessToken);
     }
   }
 
@@ -52,7 +60,6 @@ export class ProfileView extends React.Component {
 
   getUser(token) {
     const Username = localStorage.getItem('user');
-    console.log(Username);
     axios.get(`https://movyis.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` } //bearer authorization in header of HTTP request to make authorized request to API
     })
@@ -66,16 +73,8 @@ export class ProfileView extends React.Component {
           Birthday: this.formatDate(response.data.Birthday),
           FavoriteMovies: response.data.FavoriteMovies
         });
-        console.log(Username, response.data);
+        //console.log(Username, response.data);
       })
-      // this.setState({
-      //   Username: response.data.Username,
-      //   // Password: response.data.Password,
-      //   Email: response.data.Email,
-      //   Birthday: this.formatDate(response.data.Birthday),
-      //   FavoriteMovies: response.data.FavoriteMovies
-      // });
-      //})
       .catch(function (error) {
         console.log(error);
       });
@@ -95,14 +94,6 @@ export class ProfileView extends React.Component {
       { headers: { Authorization: `Bearer ${accessToken}` } }
     )
       .then(response => {
-        // this.setState({
-        //   Username: response.data.Username,
-        //   // Password: response.data.Password,
-        //   Email: response.data.Email,
-        //   Birthday: response.data.Birthday
-        // });
-        // localStorage.setItem('user', response.data.username);
-        // console.log('user updated');
         localStorage.setItem('user', this.state.Username);
 
         this.props.setUser({
@@ -159,7 +150,6 @@ export class ProfileView extends React.Component {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => {
-        console.log(response);
         localStorage.removeItem("user");
         localStorage.removeItem("token");
         window.open(`/`, "_self");
@@ -282,7 +272,6 @@ export class ProfileView extends React.Component {
                       type="date"
                       value={Birthday}
                       onChange={e => this.setBirthday(e.target.value)}
-                    //placeholder=""
                     //required
                     />
                   </Form.Group>
@@ -340,6 +329,7 @@ export class ProfileView extends React.Component {
 }
 
 let mapStateToProps = state => {
+  console.log("---state---", state);
   return {
     user: state.user,
     movies: state.movies
