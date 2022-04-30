@@ -1,0 +1,240 @@
+.movie-card {
+  margin-bottom: 5px;
+}
+
+.movie-card-text {
+  font-size: 14px;
+}
+
+.movie-card .movie-card-button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.movie-card-body .movie-card-button:hover, .movie-card-body .movie-card-button:active {
+  color: #000;
+  background-color: #f8f0df;
+  border: none;
+}
+
+.movie-poster-img {
+  max-width: 100%;
+  position: relative;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  margin: 0 25px 10px;
+}
+
+.link {
+  color: #000;
+}
+
+.link:hover {
+  color: #9d9d9d;
+}
+
+.movie-button-div {
+  align-items: center;
+}
+
+.movie-button-div .movie-button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.movie-button-div .movie-button:hover, .movie-button-div .movie-button:after {
+  color: #000;
+  background-color: #fefbf3;
+  border: none;
+}
+
+div .login-navbar {
+  background-color: #79b4b7;
+}
+
+div .navbar-link-active {
+  font-weight: bold;
+}
+
+.login-card {
+  margin-top: 60px;
+}
+
+.form-label {
+  margin-top: 15px;
+}
+
+.login-form .login-button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  margin-top: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-form .login-button:hover, .login-form .register-button:active {
+  color: #000;
+  background-color: #f8f0df;
+  border: none;
+}
+
+div .register-navbar {
+  background-color: #79b4b7;
+}
+
+div .navbar-link-active {
+  font-weight: bold;
+}
+
+.register-card {
+  margin-top: 60px;
+}
+
+.register-label {
+  margin-top: 15px;
+}
+
+.register-form .register-button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.register-form .register-button:hover, .register-form .register-button:active {
+  color: #000;
+  background-color: #fefbf3;
+  border: none;
+}
+
+.profile-container {
+  margin-top: 0;
+}
+
+.profile-card {
+  margin-bottom: 5px;
+}
+
+.user-info .deregister-button {
+  color: #000;
+  background-color: #d68b8b;
+  border: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.user-info .deregister-button:hover, .user-info .deregister-button:active {
+  color: #000;
+  background-color: #e9c1c1;
+  border: none;
+}
+
+.user-info-div {
+  margin-top: 25px;
+}
+
+.update-user-info .button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.update-user-info .button:hover, .update-user-info .button:active {
+  color: #000;
+  background-color: #fefbf3;
+  border: none;
+}
+
+.movie-card {
+  margin: 10px;
+}
+
+.movie-card-body .button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.movie-card-body .button:hover, .movie-card-body .button:active {
+  color: #000;
+  background-color: #fefbf3;
+  border: none;
+}
+
+.link-to-movie {
+  color: #000;
+  text-decoration: none;
+}
+
+.link-to-movie:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+div .navbar-container {
+  background-color: #79b4b7;
+}
+
+div .navbar-link {
+  color: #000;
+  padding: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+div .navbar-link:hover {
+  color: #000;
+  padding: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div .navbar-logo-img {
+  color: #000;
+  height: 50px;
+  padding: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div .main-view {
+  margin-top: 60px;
+}
+
+div .unregister-button {
+  color: #000;
+  background-color: #9d9d9d;
+  border: none;
+  font-weight: bold;
+}
+
+div .unregister-button:hover, div .unregister-button:active {
+  color: #000;
+  background-color: #f8f0df;
+  border: none;
+}
+
+.my-flix {
+  color: #79b4b7;
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */

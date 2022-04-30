@@ -2,9 +2,10 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "scripts": {
-    "start": "src/index.html",
-    "build": "parcel build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "parcel src/index.html",
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   "homepage": "https://github.com/Doris24/myFlix-client#readme",
   "dependencies": {
     "axios": "^0.24.0",
-    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
@@ -29,6 +29,8 @@
     "redux-devtools-extension": "^2.13.9"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-rc.0"
+    "@parcel/transformer-sass": "^2.5.0",
+    "parcel": "^2.5.0",
+    "process": "^0.11.10"
   }
 }
