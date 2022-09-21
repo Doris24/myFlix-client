@@ -1,13 +1,17 @@
 # movyis - myFlix-Client
-This is the client-side of an application called myFlix based on its existing server-side code (REST API and database).
-### A user is able to 
+This is the client-side of an application called __movyis__ based on its existing server-side code (REST API and database).
+
+## Hosted on
+[Netlify](https://movyis.netlify.app/)
+
+## Key Features
  * register
  * login
- * browse through movies and add them to their own list of favorites
- * edit their profile information
+ * browse through movies and add them to a list of favorites
+ * edit the profile information
  * logout
 
-### The application is build with
+## Technologies
 * React
     * axios
     * parcel

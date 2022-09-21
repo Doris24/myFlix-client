@@ -8,6 +8,7 @@ import './login-view.scss';
 // Bootstrap
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from 'react-bootstrap/Card';
@@ -17,6 +18,7 @@ import { Link } from 'react-router-dom';
 export function LoginView(props) {
   const [username, setUsername] = useState(''); //variable and a method that updates the variable
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault(); //prevents the default refresh of the page after button (type="submit") click
@@ -32,12 +34,19 @@ export function LoginView(props) {
       })
       .catch(e => {
         console.log('no such user')
+        setError({ message: 'an error occured', type: 'danger' })
+        setTimeout(() => {
+          setError(null)
+        }, 5000);
       });
   };
 
   return (
 
     <div>
+      {error && <Alert variant={error.type} onClose={() => setError(null)} dismissible>
+        {error.message}
+      </Alert>}
 
       <Container>
         <Row>
